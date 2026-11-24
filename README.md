@@ -57,6 +57,12 @@ python3 -m unittest discover -s tests
 Looks live in each family's package (`umbra/looks.py`, `vellum/looks.py`,
 `signal_icons/looks.py`, …). Shared pieces are under `umbra/`.
 
+## Legacy
+
+The former standalone repos live under [nyx-legacy](https://github.com/nyx-legacy):
+[`umbra-icons`](https://github.com/nyx-legacy/umbra-icons) and
+[`vellum-icons`](https://github.com/nyx-legacy/vellum-icons). New work happens here.
+
 ## License
 
 MIT
