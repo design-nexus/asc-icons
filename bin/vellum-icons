@@ -1,0 +1,24 @@
+#!/usr/bin/env python3
+"""Vellum icons: build the theme(s) in the current colours, pick a look, keep them following.
+
+    vellum-icons install [--look LOOK]       build, use the look, follow theme changes, set folder icons
+    vellum-icons refresh [--palette FILE]    rebuild in the current colours
+    vellum-icons look [LOOK|off]             show or change the look; off stops using Vellum
+    vellum-icons folders [--reset]           give home folders (Games, Dropbox…) their icons
+    vellum-icons follow on|off               rebuild when the Omarchy theme changes
+    vellum-icons build --out DIR [--palette …]
+    vellum-icons remove
+    vellum-icons status
+
+LOOK is paper or mono.
+Part of asc-icons (design-nexus/asc-icons); drawn from Umbra's catalog and glyphs in this repo.
+"""
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from umbra import cli  # noqa: E402
+from vellum import SET  # noqa: E402
+
+if __name__ == "__main__":
+    sys.exit(cli.main(SET))

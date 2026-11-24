@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+"""Umbra icons: build the themes in the current colours, pick a look, keep them following.
+
+    umbra-icons install [--look LOOK]              build, use the look, follow theme changes, set folder icons
+    umbra-icons refresh [--palette FILE]           rebuild in the current colours (the theme hook runs this)
+    umbra-icons look [LOOK|off]                    show or change the look in use; off: stop using Umbra
+    umbra-icons folders [--reset]                  give home folders (Games, Dropbox…) their icons
+    umbra-icons follow on|off                      rebuild when the Omarchy theme changes
+    umbra-icons build --out DIR [--palette …]      write the themes somewhere else
+    umbra-icons remove                             go back to the icon theme used before
+    umbra-icons status
+
+LOOK is tile, solid, line, tinted, frame or colour.
+"""
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from umbra import cli  # noqa: E402
+
+if __name__ == "__main__":
+    sys.exit(cli.main(cli.UMBRA))

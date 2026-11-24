@@ -1,0 +1,24 @@
+#!/usr/bin/env python3
+"""Signal icons: build the theme(s) in the current colours, pick a look, keep them following.
+
+    signal-icons install [--look LOOK]       build, use the look, follow theme changes, set folder icons
+    signal-icons refresh [--palette FILE]    rebuild in the current colours
+    signal-icons look [LOOK|off]             show or change the look; off stops using Signal
+    signal-icons folders [--reset]           give home folders (Games, Dropbox…) their icons
+    signal-icons follow on|off               rebuild when the Omarchy theme changes
+    signal-icons build --out DIR [--palette …]
+    signal-icons remove
+    signal-icons status
+
+LOOK is signal.
+Part of asc-icons (design-nexus/asc-icons); drawn from Umbra's catalog and glyphs in this repo.
+"""
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from umbra import cli  # noqa: E402
+from signal_icons import SET  # noqa: E402
+
+if __name__ == "__main__":
+    sys.exit(cli.main(SET))
